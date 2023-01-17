@@ -1,0 +1,116 @@
+create database mall;
+use mall;
+
+create table mall(
+mall_name varchar(40),
+mall_address varchar(40)
+);
+
+create table store(
+store_no int, sname varchar(30),
+sloc int, dept_id int,
+oname varchar(30),
+m_ssno int , primary key(store_no)
+);
+drop table store;
+
+create table store(
+store_no int, sname varchar(30),
+sloc int, dept_id int,
+oname varchar(30),
+m_ssno int , primary key(store_no)
+);
+
+create table department(
+dep_name varchar(20), dept_id int,
+dep_manager varchar(30), primary key(dept_id)
+);
+
+create table employee(
+ename varchar(20),s_ssno int,
+dept_id int, primary key (s_ssno)
+);
+
+create table owmer(
+o_id int, o_name varchar(30),
+o_address varchar(30), o_phone int ,
+primary key (o_id)
+);
+
+create table deptmanager(
+dname varchar (20), store_no int,
+s_ssno int, dept_id int 
+);
+
+
+create table store_manager(
+smname varchar(20), s_ssno int ,
+store_no int , sm_salary int
+);
+
+
+insert into mall values ('forum','konankunte cross');
+insert into mall values ('vega city',' jp nagar');
+insert into mall values ('mantri','doddakallasandra');
+insert into mall values ('orion','rajkumar rd');
+insert into mall values ('ub city','mg road');
+
+
+insert into store values(1,'j&j',01,1000,'chohan',011);
+insert into store values(2,'h&m',02,1001,'siddhi',012);
+insert into store values(3,'d&g',03,1002,'dharpana',013);
+insert into store values(4,'ck' ,04,1003,'preesha',014);
+insert into store values(5,'lv' ,05,1004,'kanishka',015);
+
+
+insert into department values('accounts',1000,'sohan');
+insert into department values('display',1002,'gagan');
+insert into department values('cleaning',1003,'nischal');
+insert into department values('security',1004,'bhuvan');
+insert into department values('sales',1005,'durgesh');
+
+
+insert into employee values('rahul',123,1000);
+insert into employee values('umesh',456,1002);
+insert into employee values('charan',789,1003);
+insert into employee values('dipen',147,1004);
+insert into employee values('mahesh',258,1005);
+
+
+insert into owmer values ('one','chohan','jp nagar',7022019575);
+insert into owmer values ('two','siddhi','raghuvanallhi',9902406743);
+insert into owmer values ('three','dharpana','jn nagar',9985623551);
+insert into owmer values ('four','preesha','rt nagar',9446773645);
+insert into owmer values ('five','kanishka','mg road',8337446579);
+
+
+insert into deptmanager values ('sohan',1,123,1000);
+insert into deptmanager values ('gagan',2,456,1001);
+insert into deptmanager values ('nischal',3,789,1002);
+insert into deptmanager values ('bhuvan' ,4,147,1003);
+insert into deptmanager value  ('durgesh',5,258,1004);
+
+
+
+select * from mall;
+
+select * from store;
+select * from department;
+
+select * from employee;
+select * from owmer;
+select * from deptmanager;
+
+
+
+insert into store_manager values('gandhi',123,1,10000);
+insert into store_manager values('sahil',456,2,20000);
+insert into store_manager values('aman',789,3,30000);
+insert into store_manager values('sujan',147,4,12000);
+insert into store_manager values('sujju',258,5,11000);
+
+
+select * from ename where dep_name = accounts;
+
+
+select *from store_manager;
